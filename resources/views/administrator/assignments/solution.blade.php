@@ -79,6 +79,8 @@
                                         <input type="hidden" name="program" value="{{$solution->program}}" >
                                         <input type="hidden" name="course_id" value="{{$solution->course_id}}" >
                                         <input type="hidden" name="assignment_id" value="{{$solution->assignment_id}}" >
+                                        <input type="hidden" name="staff_id" value="{{$solution->user_id}}" >
+
                                         <div class="col-sm-2 mb-3">
                                             <label for="validationDefault01"> Score</label>
                                             <input type="number" class="form-control" id="validationDefault01"

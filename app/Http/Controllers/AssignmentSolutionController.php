@@ -26,11 +26,29 @@ class AssignmentSolutionController extends Controller
      */
     public function index()
     {
-        $solution = AssignmentSolutions::orderBy('solution_id', 'desc')->get();
-        return view('administrator.submissions.index')->with([
-            'solution'=> $solution,
-            // 'student' => $student,
-        ]);
+        if (auth()->user()->hasRole('Student')){
+            $student = Students::where('student_email',  Auth::user()->email)->first();
+            $student_id = $student->student_id;
+            $solution = AssignmentSolutions::where('student_id', $student_id)->orderBy('solution_id', 'desc')->get();
+            return view('administrator.submissions.index')->with([
+                'solution'=> $solution,
+
+            ]);
+        }elseif(auth()->user()->hasRole('Staff')){
+            $staff = User::where('email',  Auth::user()->email)->first();
+            $staff_id = $staff->user_id;
+            $solution =AssignmentSolutions::where('user_id', $staff_id)->orderBy('solution_id', 'desc')->get();
+            return view('administrator.submissions.index')->with([
+                'solution'=> $solution,
+                // 'student' => $student,
+            ]);
+        }else{
+            $solution = AssignmentSolutions::orderBy('solution_id', 'desc')->get();
+            return view('administrator.submissions.index')->with([
+                'solution'=> $solution,
+                // 'student' => $student,
+            ]);
+        }
     }
 
     /**
@@ -85,6 +103,7 @@ class AssignmentSolutionController extends Controller
 
             $course_code = $request->input("course_code");
             $course_id = $request->input("course_id");
+            $staff_id = $request->input("staff_id");
 
             if(AssignmentSolutions::where([
                 "assignment_id" => $assignment_id,
@@ -99,6 +118,7 @@ class AssignmentSolutionController extends Controller
                     "assignment_id" => $request->input("assignment_id"),
                     "solution" => $request->input("solution"),
                     "student_id" => $student_id,
+                    "user_id" => $staff_id,
                 ]);
             }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2019 at 05:20 PM
+-- Generation Time: Sep 18, 2019 at 06:56 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.2.17
 
@@ -263,7 +263,12 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_id`, `subj
 (215, 'default', 'created', 3, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:19:00', '2019-09-13 13:19:00'),
 (216, 'default', 'created', 4, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:19:00', '2019-09-13 13:19:00'),
 (217, 'default', 'created', 5, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:44:31', '2019-09-13 13:44:31'),
-(218, 'default', 'created', 6, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:44:31', '2019-09-13 13:44:31');
+(218, 'default', 'created', 6, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:44:31', '2019-09-13 13:44:31'),
+(219, 'default', 'created', 5, 'App\\Assignments', 40, 'App\\User', '{\"attributes\":{\"allocation_id\":4,\"question\":\"This is testing\",\"submission_date\":\"09\\/10\\/2019\",\"user_id\":40}}', '2019-09-17 11:53:29', '2019-09-17 11:53:29'),
+(220, 'default', 'created', 7, 'App\\AssignmentResults', 40, 'App\\User', '[]', '2019-09-17 11:54:24', '2019-09-17 11:54:24');
+INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_id`, `subject_type`, `causer_id`, `causer_type`, `properties`, `created_at`, `updated_at`) VALUES
+(221, 'default', 'created', 8, 'App\\AssignmentResults', 40, 'App\\User', '[]', '2019-09-17 11:54:25', '2019-09-17 11:54:25'),
+(222, 'default', 'created', 3, 'App\\AssignmentSolutions', 55, 'App\\User', '{\"attributes\":{\"assignment_id\":3,\"student_id\":2,\"solution\":\"Testing\"}}', '2019-09-18 15:42:49', '2019-09-18 15:42:49');
 
 -- --------------------------------------------------------
 
@@ -289,7 +294,9 @@ CREATE TABLE `assignment_results` (
 
 INSERT INTO `assignment_results` (`result_id`, `user_id`, `score`, `assignment_id`, `solution_id`, `student_id`, `updated_at`, `created_at`, `deleted_at`) VALUES
 (5, 41, 8, 2, 2, 3, '2019-09-13 13:44:31', '2019-09-13 13:44:31', NULL),
-(6, 41, 7, 2, 1, 2, '2019-09-13 13:44:31', '2019-09-13 13:44:31', NULL);
+(6, 41, 7, 2, 1, 2, '2019-09-13 13:44:31', '2019-09-13 13:44:31', NULL),
+(7, 40, 5, 2, 2, 3, '2019-09-17 11:54:24', '2019-09-17 11:54:24', NULL),
+(8, 40, 8, 2, 1, 2, '2019-09-17 11:54:24', '2019-09-17 11:54:24', NULL);
 
 -- --------------------------------------------------------
 
@@ -304,16 +311,18 @@ CREATE TABLE `assignment_solutions` (
   `student_id` bigint(20) UNSIGNED NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `assignment_solutions`
 --
 
-INSERT INTO `assignment_solutions` (`solution_id`, `solution`, `assignment_id`, `student_id`, `updated_at`, `created_at`, `deleted_at`) VALUES
-(1, 'This is the assignment solution', 2, 2, '2019-08-24 16:19:06', '2019-08-24 16:19:06', NULL),
-(2, 'sfknliohau ochjcupk tmhu', 2, 3, '2019-08-24 16:27:05', '2019-08-24 16:27:05', NULL);
+INSERT INTO `assignment_solutions` (`solution_id`, `solution`, `assignment_id`, `student_id`, `updated_at`, `created_at`, `deleted_at`, `user_id`) VALUES
+(1, 'This is the assignment solution', 2, 2, '2019-08-24 16:19:06', '2019-08-24 16:19:06', NULL, 40),
+(2, 'sfknliohau ochjcupk tmhu', 2, 3, '2019-08-24 16:27:05', '2019-08-24 16:27:05', NULL, 40),
+(3, 'Testing', 3, 2, '2019-09-18 15:42:49', '2019-09-18 15:42:49', NULL, 41);
 
 -- --------------------------------------------------------
 
@@ -403,7 +412,8 @@ INSERT INTO `course_assignments` (`assignment_id`, `allocation_id`, `question`, 
 (1, 4, 'Read and summarize&nbsp; chapter one and two', 15, '08/26/2019', 40, 'HND 2', 'Daily Part Time', 4, '2019-08-24 09:20:48', '2019-08-24 09:20:25', NULL),
 (2, 3, 'Read Chapter One and Two and submit before the stipulated date', 10, '02/02/2019', 40, 'OND 1', 'Full Time', 6, '2019-08-24 13:07:25', '2019-08-24 13:07:25', NULL),
 (3, 5, 'Read and explain chpater one of these material', 20, '08/02/2019', 41, 'OND 1', 'Full Time', 5, '2019-08-24 13:09:19', '2019-08-24 13:09:19', NULL),
-(4, 2, 'Read and summarize chapter one', 10, '08/20/2019', 41, 'OND 2', 'Part Time', 2, '2019-09-13 11:09:45', '2019-08-24 13:10:38', NULL);
+(4, 2, 'Read and summarize chapter one', 10, '08/20/2019', 41, 'OND 2', 'Part Time', 2, '2019-09-13 11:09:45', '2019-08-24 13:10:38', NULL),
+(5, 4, 'This is testing', 20, '09/10/2019', 40, 'HND 1', 'Part Time', 4, '2019-09-17 11:53:29', '2019-09-17 11:53:29', NULL);
 
 -- --------------------------------------------------------
 
@@ -438,7 +448,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2019_08_24_142140_create_assignment_solutions_table', 7),
 (15, '2019_08_24_143846_create_assignment_results_table', 7),
 (16, '2019_09_13_123818_add_submission_id_to_assignment_results', 8),
-(17, '2019_09_13_143931_add_staff_id_to_assignment_results', 9);
+(17, '2019_09_13_143931_add_staff_id_to_assignment_results', 9),
+(18, '2019_09_18_163602_add_user_id_to_assignment_solutions', 10);
 
 -- --------------------------------------------------------
 
@@ -694,7 +705,6 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`student_id`, `student_name`, `student_email`, `matric_number`, `phone_number`, `level`, `program`, `updated_at`, `created_at`, `deleted_at`) VALUES
-(1, 'Kolasope', 'kolasopde@gmail.com', '1203', '903833113', 'OND 1', 'Full Time', '2019-08-24 09:38:14', '2019-08-24 09:37:14', '2019-08-24 09:38:14'),
 (2, 'Kolasope Hammed', 'kolasope@gmail.com', '1208', '903833113', 'OND 1', 'Full Time', '2019-08-24 11:28:55', '2019-08-24 09:38:51', NULL),
 (3, 'Deborah Solafola', 'kola@gmail.com', '1294', '903833331', 'OND 1', 'Full Time', '2019-08-24 11:32:19', '2019-08-24 09:38:52', NULL),
 (4, 'Kemi Afolabi', 'kemi@gmail.com', '1225', '9038338103', 'HND 1', 'Part Time', '2019-08-24 11:32:40', '2019-08-24 09:38:53', NULL),
@@ -727,8 +737,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `name`, `email`, `email_verified_at`, `password`, `role`, `status`, `remember_token`, `updated_at`, `created_at`, `deleted_at`) VALUES
 (1, 'Adesina Taiwo Olajide', 'administrator@gmail.com', '2019-07-24 13:26:22', '$2y$10$VEWAsXEQh14SikhK54AnhOq1VZPaeNXix.ubtNDE.MRmvBHiWhMii', 'Administrator', 1, NULL, '2019-07-30 12:42:25', '2019-07-24 10:33:08', NULL),
 (2, 'Adesina Taiwo Olajide', 'tolajide74@gmail.com', '2019-07-24 11:44:07', '$2y$10$LKttpCXdk/8SORS84PDOXO1GuRkBE4mBwkR3flK4e0/yzlsKdtIwy', 'Administrator', 1, NULL, '2019-07-25 15:03:29', '2019-07-24 11:12:55', NULL),
+(40, 'Ajibade Samson', 'samson@gmail.com', '2019-09-17 12:52:04', '$2y$10$RakXhy.iD6as/3n/sfMtw.TSPxSV/UJINig.DmZf1naHYELlBHrU6', 'Staff', 1, NULL, '2019-08-24 08:33:25', '2019-08-24 08:33:25', NULL),
 (41, 'Adesina Taiwo O', 'taiwo@gmail.com', '2019-08-24 09:48:44', '$2y$10$3cwbfmSJux4OL6N/Ub2bbub7tpxb1bo0Co0yLuoD3F5skqO8LZCmy', 'Staff', 1, NULL, '2019-08-24 08:48:44', '2019-08-24 08:48:44', NULL),
-(44, 'Ajibade Samson', 'samson@gmail.com', '2019-09-13 14:54:05', '$2y$10$RakXhy.iD6as/3n/sfMtw.TSPxSV/UJINig.DmZf1naHYELlBHrU6', 'Staff', 1, NULL, '2019-08-24 08:33:25', '2019-08-24 08:33:25', NULL),
 (55, 'Kolasope Hammed', 'kolasope@gmail.com', '2019-08-24 12:28:55', '$2y$10$Cx2I44XSkf0yv9vLdRSF2OI0dJEWbl7Qb9mLmcKMjD7sweAlZw1Um', 'Student', 1, NULL, '2019-08-24 09:38:51', '2019-08-24 09:38:51', NULL),
 (56, 'Deborah Solafola', 'kola@gmail.com', '2019-08-24 12:32:20', '$2y$10$FqtjK0oa4lyLcq4O1Qr3A.qjoK7tzK6iIEj0f1MTrjFlrGNtPmxGK', 'Student', 1, NULL, '2019-08-24 09:38:52', '2019-08-24 09:38:52', NULL),
 (57, 'Kemi Afolabi', 'kemi@gmail.com', '2019-08-24 12:32:40', '$2y$10$04YX0qaAYzhyNnAx4XchKed7dDDzWX/5CUxOF2OzoBpJRLRqwipmG', 'Student', 1, NULL, '2019-08-24 09:38:53', '2019-08-24 09:38:53', NULL),
@@ -847,19 +857,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
 -- AUTO_INCREMENT for table `assignment_results`
 --
 ALTER TABLE `assignment_results`
-  MODIFY `result_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `result_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `assignment_solutions`
 --
 ALTER TABLE `assignment_solutions`
-  MODIFY `solution_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `solution_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `courses`
@@ -877,13 +887,13 @@ ALTER TABLE `course_allocations`
 -- AUTO_INCREMENT for table `course_assignments`
 --
 ALTER TABLE `course_assignments`
-  MODIFY `assignment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `assignment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `permissions`
