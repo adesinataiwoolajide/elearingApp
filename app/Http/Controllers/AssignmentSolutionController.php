@@ -29,7 +29,11 @@ class AssignmentSolutionController extends Controller
         if (auth()->user()->hasRole('Student')){
             $student = Students::where('student_email',  Auth::user()->email)->first();
             $student_id = $student->student_id;
-            $solution = AssignmentSolutions::where('student_id', $student_id)->orderBy('solution_id', 'desc')->get();
+            $solution = AssignmentSolutions::where(
+                [
+                    'student_id' => $student_id,
+                    'status' => 0,
+            ])->orderBy('solution_id', 'desc')->get();
             return view('administrator.submissions.index')->with([
                 'solution'=> $solution,
 
@@ -37,14 +41,87 @@ class AssignmentSolutionController extends Controller
         }elseif(auth()->user()->hasRole('Staff')){
             $staff = User::where('email',  Auth::user()->email)->first();
             $staff_id = $staff->user_id;
-            $solution =AssignmentSolutions::where('user_id', $staff_id)->orderBy('solution_id', 'desc')->get();
+            $solution =AssignmentSolutions::where([
+                'user_id' => $staff_id,
+                'status' => 0,
+            ])->orderBy('solution_id', 'desc')->get();
             return view('administrator.submissions.index')->with([
                 'solution'=> $solution,
                 // 'student' => $student,
             ]);
         }else{
-            $solution = AssignmentSolutions::orderBy('solution_id', 'desc')->get();
+            $solution =  AssignmentSolutions::where(
+                [
+
+                'status' => 0,
+            ])->orderBy('solution_id', 'desc')->get();
             return view('administrator.submissions.index')->with([
+                'solution'=> $solution,
+                // 'student' => $student,
+            ]);
+        }
+    }
+
+    public function marked()
+    {
+        if (auth()->user()->hasRole('Student')){
+            $student = Students::where('student_email',  Auth::user()->email)->first();
+            $student_id = $student->student_id;
+            $solution = AssignmentSolutions::where([
+                'student_id' => $student_id,
+                'status' => 1,
+            ])->orderBy('solution_id', 'desc')->get();
+            return view('administrator.submissions.marked')->with([
+                'solution'=> $solution,
+
+            ]);
+        }elseif(auth()->user()->hasRole('Staff')){
+            $staff = User::where('email',  Auth::user()->email)->first();
+            $staff_id = $staff->user_id;
+            $solution =AssignmentSolutions::where([
+                'user_id' => $staff_id,
+                'status' => 1,
+            ])->orderBy('solution_id', 'desc')->get();
+            return view('administrator.submissions.marked')->with([
+                'solution'=> $solution,
+                // 'student' => $student,
+            ]);
+        }else{
+            $solution = AssignmentSolutions::orderBy('solution_id', 'desc')->get();
+            return view('administrator.submissions.marked')->with([
+                'solution'=> $solution,
+                // 'student' => $student,
+            ]);
+        }
+    }
+
+    public function list()
+    {
+        if (auth()->user()->hasRole('Student')){
+            $student = Students::where('student_email',  Auth::user()->email)->first();
+            $student_id = $student->student_id;
+            $solution = AssignmentSolutions::where([
+                'student_id' => $student_id,
+
+            ])->orderBy('solution_id', 'desc')->get();
+            return view('administrator.submissions.list')->with([
+                'solution'=> $solution,
+
+            ]);
+        }elseif(auth()->user()->hasRole('Staff')){
+            $staff = User::where('email',  Auth::user()->email)->first();
+            $staff_id = $staff->user_id;
+            $solution =AssignmentSolutions::where([
+                'user_id' => $staff_id,
+
+            ])->orderBy('solution_id', 'desc')->get();
+            return view('administrator.submissions.list')->with([
+                'solution'=> $solution,
+                // 'student' => $student,
+            ]);
+        }else{
+            $solution = AssignmentSolutions::orderBy('solution_id', 'desc')->get();
+            return view('administrator.submissions.list')->with([
                 'solution'=> $solution,
                 // 'student' => $student,
             ]);
@@ -107,11 +184,11 @@ class AssignmentSolutionController extends Controller
 
             if(AssignmentSolutions::where([
                 "assignment_id" => $assignment_id,
-                "solution" => $solution,
+               // "solution" => $solution,
                 "student_id" => $student_id]
 
                 )->exists()){
-                return redirect()->back()->with("error", "You Have Subnitted Your Solution for $course_code Before ");
+                    return redirect()->route("assignment.index")->with("error", "You Have Subnitted Your Solution for $course_code Before ");
             }else{
                 $data =([
                     "staff" => new AssignmentSolutions,
@@ -119,7 +196,9 @@ class AssignmentSolutionController extends Controller
                     "solution" => $request->input("solution"),
                     "student_id" => $student_id,
                     "user_id" => $staff_id,
+                    "status" => 0,
                 ]);
+
             }
 
             if($this->model->create($data)){

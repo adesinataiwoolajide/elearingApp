@@ -14,7 +14,7 @@ class AssignmentSolutions extends Model
     public $primaryKey = 'solution_id';
     protected $guard_name = 'web';
     protected $fillable = [
-        'assignment_id', 'student_id', 'solution', 'user_id'
+        'assignment_id', 'student_id', 'solution', 'user_id', 'status'
     ];
     protected static $logAttributes = ['assignment_id', 'student_id', 'solution'];
 
@@ -37,6 +37,12 @@ class AssignmentSolutions extends Model
         return $this->attributes['user_id'] = ($value);
     }
     public function getSolutionUserIdAttribute($value){
+        return ($value);
+    }
+    public function setStatusAttribute($value){
+        return $this->attributes['status'] = ($value);
+    }
+    public function getStatusAttribute($value){
         return ($value);
     }
     public function setSolutionAttribute($value){

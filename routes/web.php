@@ -109,7 +109,9 @@ Route::group(["prefix" => "administrator", "middleware" => "verified"], function
     });
 
     Route::group(["prefix" => "submissions"], function(){
-        Route::get("/index", "AssignmentSolutionController@index")->name("submissions.index");
+        Route::get("/new", "AssignmentSolutionController@index")->name("submissions.index");
+        Route::get("/marked", "AssignmentSolutionController@marked")->name("submissions.marked");
+        Route::get("/all", "AssignmentSolutionController@list")->name("submissions.list");
         Route::get("/edit", "AssignmentSolutionController@edit")->name("submissions.edit");
     });
 

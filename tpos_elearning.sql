@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2019 at 06:56 PM
+-- Generation Time: Sep 20, 2019 at 04:23 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.2.17
 
@@ -41,234 +41,6 @@ CREATE TABLE `activity_log` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `activity_log`
---
-
-INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_id`, `subject_type`, `causer_id`, `causer_type`, `properties`, `created_at`, `updated_at`) VALUES
-(1, 'default', 'created', 2, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC 211\",\"course_title\":\"Introduction To Programming\"}}', '2019-07-30 11:24:35', '2019-07-30 11:24:35'),
-(2, 'default', 'created', 3, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC212\",\"course_title\":\"Structured Programming\"}}', '2019-07-30 11:25:22', '2019-07-30 11:25:22'),
-(3, 'default', 'updated', 1, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC 101\",\"course_title\":\"Introduction To Computers\"},\"old\":{\"course_code\":\"CSC 101\",\"course_title\":\"Introduction To Computer\"}}', '2019-07-30 11:41:25', '2019-07-30 11:41:25'),
-(4, 'default', 'updated', 1, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC 101\",\"course_title\":\"Introduction To Computer\"},\"old\":{\"course_code\":\"CSC 101\",\"course_title\":\"Introduction To Computers\"}}', '2019-07-30 11:42:06', '2019-07-30 11:42:06'),
-(5, 'default', 'updated', 2, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC211\",\"course_title\":\"Introduction To Programming\"},\"old\":{\"course_code\":\"CSC 211\",\"course_title\":\"Introduction To Programming\"}}', '2019-07-30 11:46:34', '2019-07-30 11:46:34'),
-(6, 'default', 'updated', 1, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC101\",\"course_title\":\"Introduction To Computer\"},\"old\":{\"course_code\":\"CSC 101\",\"course_title\":\"Introduction To Computer\"}}', '2019-07-30 11:46:50', '2019-07-30 11:46:50'),
-(7, 'default', 'updated', 3, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC212\",\"course_title\":\"Structured Programming\"},\"old\":{\"course_code\":\"CSC212\",\"course_title\":\"Structured Programming\"}}', '2019-07-30 11:51:00', '2019-07-30 11:51:00'),
-(8, 'default', 'updated', 1, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC101\",\"course_title\":\"Introduction To Computer\"},\"old\":{\"course_code\":\"CSC101\",\"course_title\":\"Introduction To Computer\"}}', '2019-07-30 11:53:49', '2019-07-30 11:53:49'),
-(9, 'default', 'deleted', 1, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC101\",\"course_title\":\"Introduction To Computer\"}}', '2019-07-30 12:00:49', '2019-07-30 12:00:49'),
-(10, 'default', 'restored', 1, 'App\\Courses', 1, 'App\\User', '{\"course_title\":\"Introduction To Computer\",\"course_code\":\"CSC101\"}', '2019-07-30 12:28:30', '2019-07-30 12:28:30'),
-(11, 'default', 'deleted', 3, 'App\\Courses', 1, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC212\",\"course_title\":\"Structured Programming\"}}', '2019-07-30 12:30:41', '2019-07-30 12:30:41'),
-(12, 'default', 'restored', 3, 'App\\Courses', 1, 'App\\User', '{\"course_title\":\"Structured Programming\",\"course_code\":\"CSC212\"}', '2019-07-30 12:30:53', '2019-07-30 12:30:53'),
-(13, 'default', 'deleted', 3, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Adeola Sola\",\"email\":\"admin@gmail.com\"}}', '2019-07-30 12:38:44', '2019-07-30 12:38:44'),
-(14, 'default', 'updated', 1, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Adesina Taiwo Olajide\",\"email\":\"administrator@gmail.com\"},\"old\":{\"name\":\"Adesina Taiwo Olajide\",\"email\":\"administrator@gmail.com\"}}', '2019-07-30 12:39:53', '2019-07-30 12:39:53'),
-(15, 'default', 'updated', 1, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Adesina Taiwo Olajide\",\"email\":\"administrator@gmail.com\"},\"old\":{\"name\":\"Adesina Taiwo Olajide\",\"email\":\"administrator@gmail.com\"}}', '2019-07-30 12:42:25', '2019-07-30 12:42:25'),
-(16, 'default', 'created', 5, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"}}', '2019-07-30 13:30:04', '2019-07-30 13:30:04'),
-(17, 'default', 'created', 6, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"}}', '2019-07-30 13:31:25', '2019-07-30 13:31:25'),
-(18, 'default', 'created', 7, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"}}', '2019-07-30 13:33:12', '2019-07-30 13:33:12'),
-(19, 'default', 'created', 1, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Ajibade Samson\",\"staff_email\":\"samson@gmail.com\"}}', '2019-07-30 13:33:12', '2019-07-30 13:33:12'),
-(20, 'default', 'created', 8, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Akinsola Sunday\",\"email\":\"sola@gmail.com\"}}', '2019-07-30 13:58:11', '2019-07-30 13:58:11'),
-(21, 'default', 'created', 2, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"sola@gmail.com\"}}', '2019-07-30 13:58:11', '2019-07-30 13:58:11'),
-(22, 'default', 'updated', 2, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Akinsola Sundays\",\"staff_email\":\"sola@gmail.com\"},\"old\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"sola@gmail.com\"}}', '2019-07-30 14:09:37', '2019-07-30 14:09:37'),
-(23, 'default', 'updated', 2, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"solas@gmail.com\"},\"old\":{\"staff_name\":\"Akinsola Sundays\",\"staff_email\":\"sola@gmail.com\"}}', '2019-07-30 14:20:56', '2019-07-30 14:20:56'),
-(24, 'default', 'updated', 2, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"sola@gmail.com\"},\"old\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"solas@gmail.com\"}}', '2019-07-30 14:21:15', '2019-07-30 14:21:15'),
-(25, 'default', 'deleted', 1, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Ajibade Samson\",\"staff_email\":\"samson@gmail.com\"}}', '2019-07-30 14:29:51', '2019-07-30 14:29:51'),
-(26, 'default', 'deleted', 7, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"}}', '2019-07-30 14:29:51', '2019-07-30 14:29:51'),
-(27, 'default', 'deleted', 2, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"sola@gmail.com\"}}', '2019-07-30 14:30:01', '2019-07-30 14:30:01'),
-(28, 'default', 'deleted', 8, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Akinsola Sunday\",\"email\":\"sola@gmail.com\"}}', '2019-07-30 14:30:01', '2019-07-30 14:30:01'),
-(29, 'default', 'created', 1, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":1,\"user_id\":7,\"program\":\"Full Time\",\"level\":\"OND 2\"}}', '2019-07-30 21:18:40', '2019-07-30 21:18:40'),
-(30, 'default', 'created', 2, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":3,\"user_id\":7,\"program\":\"Daily Part Time\",\"level\":\"HND 1\"}}', '2019-07-30 21:28:40', '2019-07-30 21:28:40'),
-(31, 'default', 'created', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":2,\"user_id\":8,\"program\":\"Daily Part Time\",\"level\":\"HND 2\"}}', '2019-07-30 21:31:12', '2019-07-30 21:31:12'),
-(32, 'default', 'updated', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":2,\"user_id\":8,\"program\":\"Daily Part Time\",\"level\":\"OND 1\"},\"old\":{\"course_id\":2,\"user_id\":8,\"program\":\"Daily Part Time\",\"level\":\"HND 2\"}}', '2019-07-31 08:00:16', '2019-07-31 08:00:16'),
-(33, 'default', 'updated', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":2,\"user_id\":7,\"program\":\"Full Time\",\"level\":\"OND 2\"},\"old\":{\"course_id\":2,\"user_id\":8,\"program\":\"Daily Part Time\",\"level\":\"OND 1\"}}', '2019-07-31 08:00:47', '2019-07-31 08:00:47'),
-(34, 'default', 'updated', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":1,\"user_id\":8,\"program\":\"Full Time\",\"level\":\"OND 2\"},\"old\":{\"course_id\":2,\"user_id\":7,\"program\":\"Full Time\",\"level\":\"OND 2\"}}', '2019-07-31 08:01:10', '2019-07-31 08:01:10'),
-(35, 'default', 'updated', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":2,\"user_id\":8,\"program\":\"Full Time\",\"level\":\"OND 2\"},\"old\":{\"course_id\":1,\"user_id\":8,\"program\":\"Full Time\",\"level\":\"OND 2\"}}', '2019-07-31 08:01:36', '2019-07-31 08:01:36'),
-(36, 'default', 'deleted', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":2,\"user_id\":8,\"program\":\"Full Time\",\"level\":\"OND 2\"}}', '2019-07-31 08:20:43', '2019-07-31 08:20:43'),
-(37, 'default', 'restored', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"course_id\":2,\"user_id\":8,\"program\":\"Full Time\",\"level\":\"OND 2\"}', '2019-07-31 08:24:00', '2019-07-31 08:24:00'),
-(38, 'default', 'deleted', 1, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":1,\"user_id\":7,\"program\":\"Full Time\",\"level\":\"OND 2\"}}', '2019-07-31 08:28:02', '2019-07-31 08:28:02'),
-(39, 'default', 'restored', 1, 'App\\CourseAllocations', 1, 'App\\User', '{\"course_id\":1,\"user_id\":7,\"program\":\"Full Time\",\"level\":\"OND 2\"}', '2019-07-31 08:28:22', '2019-07-31 08:28:22'),
-(40, 'default', 'created', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Name\",\"student_email\":\"Email\",\"matric_number\":\"Matric Number\"}}', '2019-07-31 10:43:46', '2019-07-31 10:43:46'),
-(41, 'default', 'created', 9, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Name\",\"email\":\"Email\"}}', '2019-07-31 10:43:46', '2019-07-31 10:43:46'),
-(42, 'default', 'created', 2, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Sola\",\"student_email\":\"sola@gmail.com\",\"matric_number\":\"123\"}}', '2019-07-31 10:43:47', '2019-07-31 10:43:47'),
-(43, 'default', 'created', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Sola\",\"student_email\":\"sola@gmail.com\",\"matric_number\":\"123\"}}', '2019-07-31 10:45:50', '2019-07-31 10:45:50'),
-(44, 'default', 'created', 11, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Sola\",\"email\":\"sola@gmail.com\"}}', '2019-07-31 10:45:50', '2019-07-31 10:45:50'),
-(45, 'default', 'created', 4, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Fola\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"124\"}}', '2019-07-31 10:45:51', '2019-07-31 10:45:51'),
-(46, 'default', 'created', 12, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Fola\",\"email\":\"kola@gmail.com\"}}', '2019-07-31 10:45:51', '2019-07-31 10:45:51'),
-(47, 'default', 'created', 5, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"125\"}}', '2019-07-31 10:45:51', '2019-07-31 10:45:51'),
-(48, 'default', 'created', 13, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-07-31 10:45:51', '2019-07-31 10:45:51'),
-(49, 'default', 'created', 6, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Opeyemi\",\"student_email\":\"opeyemi@gmail.com\",\"matric_number\":\"126\"}}', '2019-07-31 10:45:52', '2019-07-31 10:45:52'),
-(50, 'default', 'created', 14, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Opeyemi\",\"email\":\"opeyemi@gmail.com\"}}', '2019-07-31 10:45:52', '2019-07-31 10:45:52'),
-(51, 'default', 'created', 7, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-07-31 11:05:31', '2019-07-31 11:05:31'),
-(52, 'default', 'created', 15, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-07-31 11:05:31', '2019-07-31 11:05:31'),
-(53, 'default', 'created', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-07-31 11:18:41', '2019-07-31 11:18:41'),
-(54, 'default', 'created', 16, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-07-31 11:18:41', '2019-07-31 11:18:41'),
-(55, 'default', 'created', 2, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-07-31 11:18:41', '2019-07-31 11:18:41'),
-(56, 'default', 'created', 17, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Deborah\",\"email\":\"kola@gmail.com\"}}', '2019-07-31 11:18:41', '2019-07-31 11:18:41'),
-(57, 'default', 'created', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-07-31 11:18:42', '2019-07-31 11:18:42'),
-(58, 'default', 'created', 18, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-07-31 11:18:42', '2019-07-31 11:18:42'),
-(59, 'default', 'created', 4, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Opeyemi\",\"student_email\":\"opeyemi@gmail.com\",\"matric_number\":\"1236\"}}', '2019-07-31 11:18:42', '2019-07-31 11:18:42'),
-(60, 'default', 'created', 19, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Opeyemi\",\"email\":\"opeyemi@gmail.com\"}}', '2019-07-31 11:18:42', '2019-07-31 11:18:42'),
-(61, 'default', 'updated', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope Hammed\",\"student_email\":\"hammed@gmail.com\",\"matric_number\":\"12030\"},\"old\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-07-31 11:50:33', '2019-07-31 11:50:33'),
-(62, 'default', 'deleted', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope Hammed\",\"student_email\":\"hammed@gmail.com\",\"matric_number\":\"12030\"}}', '2019-07-31 11:53:57', '2019-07-31 11:53:57'),
-(63, 'default', 'deleted', 16, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope Hammed\",\"email\":\"hammed@gmail.com\"}}', '2019-07-31 11:53:57', '2019-07-31 11:53:57'),
-(64, 'default', 'restored', 1, 'App\\Students', 1, 'App\\User', '{\"student_name\":\"Kolasope Hammed\",\"student_email\":\"hammed@gmail.com\"}', '2019-07-31 12:04:11', '2019-07-31 12:04:11'),
-(65, 'default', 'deleted', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope Hammed\",\"student_email\":\"hammed@gmail.com\",\"matric_number\":\"12030\"}}', '2019-07-31 12:06:27', '2019-07-31 12:06:27'),
-(66, 'default', 'deleted', 16, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope Hammed\",\"email\":\"hammed@gmail.com\"}}', '2019-07-31 12:06:27', '2019-07-31 12:06:27'),
-(67, 'default', 'restored', 1, 'App\\Students', 1, 'App\\User', '{\"student_name\":\"Kolasope Hammed\",\"student_email\":\"hammed@gmail.com\"}', '2019-07-31 12:17:45', '2019-07-31 12:17:45'),
-(68, 'default', 'deleted', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-07-31 12:18:29', '2019-07-31 12:18:29'),
-(69, 'default', 'deleted', 18, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-07-31 12:18:29', '2019-07-31 12:18:29'),
-(70, 'default', 'deleted', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-07-31 12:23:33', '2019-07-31 12:23:33'),
-(71, 'default', 'deleted', 18, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-07-31 12:23:33', '2019-07-31 12:23:33'),
-(72, 'default', 'deleted', 2, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-07-31 12:25:16', '2019-07-31 12:25:16'),
-(73, 'default', 'deleted', 17, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Deborah\",\"email\":\"kola@gmail.com\"}}', '2019-07-31 12:25:16', '2019-07-31 12:25:16'),
-(74, 'default', 'deleted', 1, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Ajibade Samson\",\"staff_email\":\"samson@gmail.com\"}}', '2019-07-31 12:30:09', '2019-07-31 12:30:09'),
-(75, 'default', 'deleted', 7, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"}}', '2019-07-31 12:30:09', '2019-07-31 12:30:09'),
-(76, 'default', 'created', 20, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Akinsola Sunday\",\"email\":\"sunday@gmail.com\"}}', '2019-08-01 07:49:57', '2019-08-01 07:49:57'),
-(77, 'default', 'created', 3, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"sunday@gmail.com\"}}', '2019-08-01 07:49:57', '2019-08-01 07:49:57'),
-(78, 'default', 'updated', 20, 'App\\User', 20, 'App\\User', '{\"attributes\":{\"name\":\"Akinsola Sunday\",\"email\":\"sunday@gmail.com\"},\"old\":{\"name\":\"Akinsola Sunday\",\"email\":\"sunday@gmail.com\"}}', '2019-08-01 07:54:28', '2019-08-01 07:54:28'),
-(79, 'default', 'updated', 1, 'App\\Courses', 20, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC101\",\"course_title\":\"Introduction To Computer\"},\"old\":{\"course_code\":\"CSC101\",\"course_title\":\"Introduction To Computer\"}}', '2019-08-01 07:55:10', '2019-08-01 07:55:10'),
-(80, 'default', 'created', 4, 'App\\Courses', 20, 'App\\User', '{\"attributes\":{\"course_code\":\"MFX220\",\"course_title\":\"Mifox Training\"}}', '2019-08-01 07:56:25', '2019-08-01 07:56:25'),
-(81, 'default', 'created', 4, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":4,\"user_id\":20,\"program\":\"Full Time\",\"level\":\"OND 1\"}}', '2019-08-01 08:26:34', '2019-08-01 08:26:34'),
-(82, 'default', 'created', 5, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":3,\"user_id\":20,\"program\":\"Daily Part Time\",\"level\":\"OND 2\"}}', '2019-08-01 08:26:49', '2019-08-01 08:26:49'),
-(83, 'default', 'updated', 3, 'App\\Staffs', 20, 'App\\User', '{\"attributes\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"sunday@gmail.com\"},\"old\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"sunday@gmail.com\"}}', '2019-08-01 09:12:19', '2019-08-01 09:12:19'),
-(84, 'default', 'created', 21, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"}}', '2019-08-01 09:13:10', '2019-08-01 09:13:10'),
-(85, 'default', 'created', 4, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Ajibade Samson\",\"staff_email\":\"samson@gmail.com\"}}', '2019-08-01 09:13:10', '2019-08-01 09:13:10'),
-(86, 'default', 'updated', 21, 'App\\User', 21, 'App\\User', '{\"attributes\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"},\"old\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"}}', '2019-08-01 09:27:38', '2019-08-01 09:27:38'),
-(87, 'default', 'updated', 4, 'App\\Staffs', 21, 'App\\User', '{\"attributes\":{\"staff_name\":\"Ajibade Samson Opeyemi\",\"staff_email\":\"samson@gmail.com\"},\"old\":{\"staff_name\":\"Ajibade Samson\",\"staff_email\":\"samson@gmail.com\"}}', '2019-08-01 09:32:49', '2019-08-01 09:32:49'),
-(88, 'default', 'created', 5, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-01 10:03:06', '2019-08-01 10:03:06'),
-(89, 'default', 'created', 22, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-08-01 10:03:06', '2019-08-01 10:03:06'),
-(90, 'default', 'created', 6, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-08-01 10:03:06', '2019-08-01 10:03:06'),
-(91, 'default', 'created', 23, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Deborah\",\"email\":\"kola@gmail.com\"}}', '2019-08-01 10:03:06', '2019-08-01 10:03:06'),
-(92, 'default', 'created', 7, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-08-01 10:03:06', '2019-08-01 10:03:06'),
-(93, 'default', 'created', 24, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-08-01 10:03:07', '2019-08-01 10:03:07'),
-(94, 'default', 'created', 8, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Opeyemi\",\"student_email\":\"opeyemi@gmail.com\",\"matric_number\":\"1236\"}}', '2019-08-01 10:03:07', '2019-08-01 10:03:07'),
-(95, 'default', 'created', 25, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Opeyemi\",\"email\":\"opeyemi@gmail.com\"}}', '2019-08-01 10:03:07', '2019-08-01 10:03:07'),
-(96, 'default', 'created', 5, 'App\\Courses', 21, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC219\",\"course_title\":\"Programming In High Level Language\"}}', '2019-08-01 10:09:55', '2019-08-01 10:09:55'),
-(97, 'default', 'updated', 5, 'App\\Courses', 21, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC219\",\"course_title\":\"Programming In High Level Languages\"},\"old\":{\"course_code\":\"CSC219\",\"course_title\":\"Programming In High Level Language\"}}', '2019-08-01 10:10:24', '2019-08-01 10:10:24'),
-(98, 'default', 'updated', 3, 'App\\Courses', 21, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC212\",\"course_title\":\"Structured Programming\"},\"old\":{\"course_code\":\"CSC212\",\"course_title\":\"Structured Programming\"}}', '2019-08-01 10:10:54', '2019-08-01 10:10:54'),
-(99, 'default', 'created', 6, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":5,\"user_id\":21,\"program\":\"Daily Part Time\",\"level\":\"HND 1\"}}', '2019-08-01 10:14:51', '2019-08-01 10:14:51'),
-(100, 'default', 'created', 7, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":4,\"user_id\":21,\"program\":\"Full Time\",\"level\":\"HND 2\"}}', '2019-08-01 10:15:21', '2019-08-01 10:15:21'),
-(101, 'default', 'created', 1, 'App\\Assignments', 21, 'App\\User', '{\"attributes\":{\"allocation_id\":6,\"question\":\"fgoq nwvmals;d ehrwje\",\"submission_date\":\"08\\/02\\/2019\",\"user_id\":21}}', '2019-08-01 12:20:36', '2019-08-01 12:20:36'),
-(102, 'default', 'created', 2, 'App\\Assignments', 21, 'App\\User', '{\"attributes\":{\"allocation_id\":6,\"question\":\"fgoq nwvmals;d ehrwje\",\"submission_date\":\"08\\/02\\/2019\",\"user_id\":21}}', '2019-08-01 12:20:51', '2019-08-01 12:20:51'),
-(103, 'default', 'created', 3, 'App\\Assignments', 21, 'App\\User', '{\"attributes\":{\"allocation_id\":6,\"question\":\"Read and Summarize chapter one to five of the uploaded handout\",\"submission_date\":\"02\\/02\\/2019\",\"user_id\":21}}', '2019-08-01 13:02:28', '2019-08-01 13:02:28'),
-(104, 'default', 'created', 1, 'App\\Assignments', 21, 'App\\User', '{\"attributes\":{\"allocation_id\":6,\"question\":\"Read and Summarize chapter one to five of the uploaded handout\",\"submission_date\":\"02\\/02\\/2019\",\"user_id\":21}}', '2019-08-01 13:05:25', '2019-08-01 13:05:25'),
-(105, 'default', 'created', 2, 'App\\Assignments', 21, 'App\\User', '{\"attributes\":{\"allocation_id\":7,\"question\":\"Please summarize the content of this material\",\"submission_date\":\"02\\/02\\/2019\",\"user_id\":21}}', '2019-08-01 13:29:13', '2019-08-01 13:29:13'),
-(106, 'default', 'updated', 2, 'App\\Assignments', 21, 'App\\User', '{\"attributes\":{\"allocation_id\":7,\"question\":\"Please summarize the content of this material and submit on or before the stipulated date\",\"submission_date\":\"03\\/02\\/2019\",\"user_id\":21},\"old\":{\"allocation_id\":7,\"question\":\"Please summarize the content of this material\",\"submission_date\":\"02\\/02\\/2019\",\"user_id\":21}}', '2019-08-01 13:50:29', '2019-08-01 13:50:29'),
-(107, 'default', 'deleted', 2, 'App\\Assignments', 21, 'App\\User', '{\"attributes\":{\"allocation_id\":7,\"question\":\"Please summarize the content of this material and submit on or before the stipulated date\",\"submission_date\":\"03\\/02\\/2019\",\"user_id\":21}}', '2019-08-01 14:22:56', '2019-08-01 14:22:56'),
-(108, 'default', 'created', 3, 'App\\Assignments', 20, 'App\\User', '{\"attributes\":{\"allocation_id\":5,\"question\":\"This is for testing\",\"submission_date\":\"08\\/14\\/2019\",\"user_id\":20}}', '2019-08-01 14:31:16', '2019-08-01 14:31:16'),
-(109, 'default', 'deleted', 3, 'App\\Assignments', 20, 'App\\User', '{\"attributes\":{\"allocation_id\":5,\"question\":\"This is for testing\",\"submission_date\":\"08\\/14\\/2019\",\"user_id\":20}}', '2019-08-01 14:31:24', '2019-08-01 14:31:24'),
-(110, 'default', 'updated', 3, 'App\\Assignments', 20, 'App\\User', '{\"attributes\":{\"allocation_id\":5,\"question\":\"This is for testing, Please submit before the stipulated date\",\"submission_date\":\"08\\/14\\/2019\",\"user_id\":20},\"old\":{\"allocation_id\":5,\"question\":\"This is for testing\",\"submission_date\":\"08\\/14\\/2019\",\"user_id\":20}}', '2019-08-01 14:36:53', '2019-08-01 14:36:53'),
-(111, 'default', 'deleted', 3, 'App\\Assignments', 1, 'App\\User', '{\"attributes\":{\"allocation_id\":5,\"question\":\"This is for testing, Please submit before the stipulated date\",\"submission_date\":\"08\\/14\\/2019\",\"user_id\":20}}', '2019-08-01 14:40:47', '2019-08-01 14:40:47'),
-(112, 'default', 'updated', 2, 'App\\Assignments', 1, 'App\\User', '{\"attributes\":{\"allocation_id\":7,\"question\":\"Please summarize the content of this material and submit on or before the stipulated date. Please Take note\",\"submission_date\":\"03\\/02\\/2019\",\"user_id\":1},\"old\":{\"allocation_id\":7,\"question\":\"Please summarize the content of this material and submit on or before the stipulated date\",\"submission_date\":\"03\\/02\\/2019\",\"user_id\":21}}', '2019-08-01 14:42:56', '2019-08-01 14:42:56'),
-(113, 'default', 'created', 4, 'App\\Assignments', 21, 'App\\User', '{\"attributes\":{\"allocation_id\":6,\"question\":\"Read Chapter One to \\\" and Summerize\",\"submission_date\":\"08\\/20\\/2019\",\"user_id\":21}}', '2019-08-01 14:45:20', '2019-08-01 14:45:20'),
-(114, 'default', 'updated', 6, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah Solafola\",\"student_email\":\"debby@gmail.com\",\"matric_number\":\"1294\"},\"old\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-08-11 17:59:47', '2019-08-11 17:59:47'),
-(115, 'default', 'created', 26, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Agbeleke Folake\",\"email\":\"folake@gmail.com\"}}', '2019-08-11 18:09:55', '2019-08-11 18:09:55'),
-(116, 'default', 'created', 5, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Agbeleke Folake\",\"staff_email\":\"folake@gmail.com\"}}', '2019-08-11 18:09:55', '2019-08-11 18:09:55'),
-(117, 'default', 'created', 27, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Testing The STaff\",\"email\":\"test@gmail.com\"}}', '2019-08-11 18:14:57', '2019-08-11 18:14:57'),
-(118, 'default', 'created', 6, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Testing The STaff\",\"staff_email\":\"test@gmail.com\"}}', '2019-08-11 18:14:57', '2019-08-11 18:14:57'),
-(119, 'default', 'created', 28, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Teeboi\",\"email\":\"teeboi@gmail.com\"}}', '2019-08-11 18:26:16', '2019-08-11 18:26:16'),
-(120, 'default', 'created', 7, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Teeboi\",\"staff_email\":\"teeboi@gmail.com\"}}', '2019-08-11 18:26:16', '2019-08-11 18:26:16'),
-(121, 'default', 'created', 29, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Akinsola Sunday\",\"email\":\"sunday@gmail.com\"}}', '2019-08-11 18:35:37', '2019-08-11 18:35:37'),
-(122, 'default', 'created', 1, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Akinsola Sunday\",\"staff_email\":\"sunday@gmail.com\"}}', '2019-08-11 18:35:37', '2019-08-11 18:35:37'),
-(123, 'default', 'created', 6, 'App\\Courses', 29, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC109\",\"course_title\":\"Mifox Java Learning\"}}', '2019-08-11 18:41:26', '2019-08-11 18:41:26'),
-(124, 'default', 'updated', 1, 'App\\Courses', 29, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC101\",\"course_title\":\"Introduction To Computers\"},\"old\":{\"course_code\":\"CSC101\",\"course_title\":\"Introduction To Computer\"}}', '2019-08-11 18:41:47', '2019-08-11 18:41:47'),
-(125, 'default', 'updated', 5, 'App\\Courses', 29, 'App\\User', '{\"attributes\":{\"course_code\":\"CSC210\",\"course_title\":\"Programming In HLL\"},\"old\":{\"course_code\":\"CSC219\",\"course_title\":\"Programming In High Level Languages\"}}', '2019-08-11 18:42:42', '2019-08-11 18:42:42'),
-(126, 'default', 'created', 30, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"}}', '2019-08-11 18:47:46', '2019-08-11 18:47:46'),
-(127, 'default', 'created', 2, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Ajibade Samson\",\"staff_email\":\"samson@gmail.com\"}}', '2019-08-11 18:47:46', '2019-08-11 18:47:46'),
-(128, 'default', 'created', 1, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":1,\"user_id\":30,\"program\":\"Full Time\",\"level\":\"OND 1\"}}', '2019-08-11 18:48:28', '2019-08-11 18:48:28'),
-(129, 'default', 'created', 2, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":2,\"user_id\":30,\"program\":\"Daily Part Time\",\"level\":\"OND 2\"}}', '2019-08-11 18:48:42', '2019-08-11 18:48:42'),
-(130, 'default', 'created', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":6,\"user_id\":29,\"program\":\"Full Time\",\"level\":\"HND 1\"}}', '2019-08-11 18:48:55', '2019-08-11 18:48:55'),
-(131, 'default', 'created', 4, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":4,\"user_id\":29,\"program\":\"Daily Part Time\",\"level\":\"HND 2\"}}', '2019-08-11 18:49:10', '2019-08-11 18:49:10'),
-(132, 'default', 'created', 1, 'App\\Assignments', 29, 'App\\User', '{\"attributes\":{\"allocation_id\":4,\"question\":\"Please read and summerize the following material\",\"submission_date\":\"08\\/12\\/2019\",\"user_id\":29}}', '2019-08-11 18:52:43', '2019-08-11 18:52:43'),
-(133, 'default', 'updated', 1, 'App\\Assignments', 29, 'App\\User', '{\"attributes\":{\"allocation_id\":4,\"question\":\"Please read and summarize the following materials\",\"submission_date\":\"08\\/12\\/2019\",\"user_id\":29},\"old\":{\"allocation_id\":4,\"question\":\"Please read and summerize the following material\",\"submission_date\":\"08\\/12\\/2019\",\"user_id\":29}}', '2019-08-11 18:53:49', '2019-08-11 18:53:49'),
-(134, 'default', 'created', 2, 'App\\Assignments', 29, 'App\\User', '{\"attributes\":{\"allocation_id\":3,\"question\":\"Please read and summarize chapter 1\",\"submission_date\":\"08\\/19\\/2019\",\"user_id\":29}}', '2019-08-11 18:55:13', '2019-08-11 18:55:13'),
-(135, 'default', 'created', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-11 18:58:12', '2019-08-11 18:58:12'),
-(136, 'default', 'created', 31, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-08-11 18:58:12', '2019-08-11 18:58:12'),
-(137, 'default', 'created', 2, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-08-11 18:58:12', '2019-08-11 18:58:12'),
-(138, 'default', 'created', 32, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Deborah\",\"email\":\"kola@gmail.com\"}}', '2019-08-11 18:58:12', '2019-08-11 18:58:12'),
-(139, 'default', 'created', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-08-11 18:58:13', '2019-08-11 18:58:13'),
-(140, 'default', 'created', 33, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-08-11 18:58:13', '2019-08-11 18:58:13'),
-(141, 'default', 'created', 4, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Opeyemi\",\"student_email\":\"opeyemi@gmail.com\",\"matric_number\":\"1236\"}}', '2019-08-11 18:58:13', '2019-08-11 18:58:13'),
-(142, 'default', 'created', 34, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Opeyemi\",\"email\":\"opeyemi@gmail.com\"}}', '2019-08-11 18:58:13', '2019-08-11 18:58:13'),
-(143, 'default', 'created', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-11 19:05:40', '2019-08-11 19:05:40'),
-(144, 'default', 'created', 35, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-08-11 19:05:40', '2019-08-11 19:05:40'),
-(145, 'default', 'created', 2, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-08-11 19:05:41', '2019-08-11 19:05:41'),
-(146, 'default', 'created', 36, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Deborah\",\"email\":\"kola@gmail.com\"}}', '2019-08-11 19:05:41', '2019-08-11 19:05:41'),
-(147, 'default', 'created', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-08-11 19:05:41', '2019-08-11 19:05:41'),
-(148, 'default', 'created', 37, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-08-11 19:05:41', '2019-08-11 19:05:41'),
-(149, 'default', 'created', 4, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Opeyemi\",\"student_email\":\"opeyemi@gmail.com\",\"matric_number\":\"1236\"}}', '2019-08-11 19:05:41', '2019-08-11 19:05:41'),
-(150, 'default', 'created', 38, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Opeyemi\",\"email\":\"opeyemi@gmail.com\"}}', '2019-08-11 19:05:41', '2019-08-11 19:05:41'),
-(151, 'default', 'created', 40, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Ajibade Samson\",\"email\":\"samson@gmail.com\"}}', '2019-08-24 08:33:25', '2019-08-24 08:33:25'),
-(152, 'default', 'created', 1, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Ajibade Samson\",\"staff_email\":\"samson@gmail.com\"}}', '2019-08-24 08:33:26', '2019-08-24 08:33:26'),
-(153, 'default', 'created', 41, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Adesina Taiwo O\",\"email\":\"taiwo@gmail.com\"}}', '2019-08-24 08:48:44', '2019-08-24 08:48:44'),
-(154, 'default', 'created', 2, 'App\\Staffs', 1, 'App\\User', '{\"attributes\":{\"staff_name\":\"Adesina Taiwo O\",\"staff_email\":\"taiwo@gmail.com\"}}', '2019-08-24 08:48:44', '2019-08-24 08:48:44'),
-(155, 'default', 'created', 1, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":1,\"user_id\":41,\"program\":\"Full Time\",\"level\":\"OND 1\"}}', '2019-08-24 08:57:53', '2019-08-24 08:57:53'),
-(156, 'default', 'created', 2, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":2,\"user_id\":41,\"program\":\"Daily Part Time\",\"level\":\"OND 2\"}}', '2019-08-24 08:58:11', '2019-08-24 08:58:11'),
-(157, 'default', 'created', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":6,\"user_id\":40,\"program\":\"Full Time\",\"level\":\"HND 1\"}}', '2019-08-24 08:58:25', '2019-08-24 08:58:25'),
-(158, 'default', 'created', 4, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":4,\"user_id\":40,\"program\":\"Daily Part Time\",\"level\":\"HND 2\"}}', '2019-08-24 08:58:42', '2019-08-24 08:58:42'),
-(159, 'default', 'created', 5, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":5,\"user_id\":41,\"program\":\"Full Time\",\"level\":\"OND 1\",\"session\":\"2017\\/2018\"}}', '2019-08-24 09:07:26', '2019-08-24 09:07:26'),
-(160, 'default', 'updated', 4, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":4,\"user_id\":40,\"program\":\"Daily Part Time\",\"level\":\"HND 2\",\"session\":\"2017\\/2018\"},\"old\":{\"course_id\":4,\"user_id\":40,\"program\":\"Daily Part Time\",\"level\":\"HND 2\",\"session\":\"\"}}', '2019-08-24 09:11:20', '2019-08-24 09:11:20'),
-(161, 'default', 'updated', 3, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":6,\"user_id\":40,\"program\":\"Full Time\",\"level\":\"HND 1\",\"session\":\"2018\\/2019\"},\"old\":{\"course_id\":6,\"user_id\":40,\"program\":\"Full Time\",\"level\":\"HND 1\",\"session\":\"\"}}', '2019-08-24 09:11:36', '2019-08-24 09:11:36'),
-(162, 'default', 'updated', 2, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":2,\"user_id\":41,\"program\":\"Daily Part Time\",\"level\":\"OND 2\",\"session\":\"2019\\/2020\"},\"old\":{\"course_id\":2,\"user_id\":41,\"program\":\"Daily Part Time\",\"level\":\"OND 2\",\"session\":\"\"}}', '2019-08-24 09:11:51', '2019-08-24 09:11:51'),
-(163, 'default', 'updated', 1, 'App\\CourseAllocations', 1, 'App\\User', '{\"attributes\":{\"course_id\":1,\"user_id\":41,\"program\":\"Full Time\",\"level\":\"OND 1\",\"session\":\"2020\\/2021\"},\"old\":{\"course_id\":1,\"user_id\":41,\"program\":\"Full Time\",\"level\":\"OND 1\",\"session\":\"\"}}', '2019-08-24 09:12:06', '2019-08-24 09:12:06'),
-(164, 'default', 'created', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-24 09:17:04', '2019-08-24 09:17:04'),
-(165, 'default', 'created', 42, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-08-24 09:17:05', '2019-08-24 09:17:05'),
-(166, 'default', 'created', 2, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-08-24 09:17:05', '2019-08-24 09:17:05'),
-(167, 'default', 'created', 43, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Deborah\",\"email\":\"kola@gmail.com\"}}', '2019-08-24 09:17:05', '2019-08-24 09:17:05'),
-(168, 'default', 'created', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-08-24 09:17:06', '2019-08-24 09:17:06'),
-(169, 'default', 'created', 44, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-08-24 09:17:06', '2019-08-24 09:17:06'),
-(170, 'default', 'created', 4, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Opeyemi\",\"student_email\":\"opeyemi@gmail.com\",\"matric_number\":\"1236\"}}', '2019-08-24 09:17:06', '2019-08-24 09:17:06'),
-(171, 'default', 'created', 45, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Opeyemi\",\"email\":\"opeyemi@gmail.com\"}}', '2019-08-24 09:17:07', '2019-08-24 09:17:07'),
-(172, 'default', 'created', 1, 'App\\Assignments', 40, 'App\\User', '{\"attributes\":{\"allocation_id\":4,\"question\":\"Read and summerize&nbsp; chapter one and two\",\"submission_date\":\"08\\/26\\/2019\",\"user_id\":40}}', '2019-08-24 09:20:25', '2019-08-24 09:20:25'),
-(173, 'default', 'updated', 1, 'App\\Assignments', 40, 'App\\User', '{\"attributes\":{\"allocation_id\":4,\"question\":\"Read and summarize&nbsp; chapter one and two\",\"submission_date\":\"08\\/26\\/2019\",\"user_id\":40},\"old\":{\"allocation_id\":4,\"question\":\"Read and summerize&nbsp; chapter one and two\",\"submission_date\":\"08\\/26\\/2019\",\"user_id\":40}}', '2019-08-24 09:20:48', '2019-08-24 09:20:48'),
-(174, 'default', 'created', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-24 09:24:57', '2019-08-24 09:24:57'),
-(175, 'default', 'created', 46, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-08-24 09:24:57', '2019-08-24 09:24:57'),
-(176, 'default', 'created', 2, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-08-24 09:24:57', '2019-08-24 09:24:57'),
-(177, 'default', 'created', 47, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Deborah\",\"email\":\"kola@gmail.com\"}}', '2019-08-24 09:24:57', '2019-08-24 09:24:57'),
-(178, 'default', 'created', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-08-24 09:24:58', '2019-08-24 09:24:58'),
-(179, 'default', 'created', 48, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-08-24 09:24:58', '2019-08-24 09:24:58'),
-(180, 'default', 'created', 4, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Opeyemi\",\"student_email\":\"opeyemi@gmail.com\",\"matric_number\":\"1236\"}}', '2019-08-24 09:24:59', '2019-08-24 09:24:59'),
-(181, 'default', 'created', 49, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Opeyemi\",\"email\":\"opeyemi@gmail.com\"}}', '2019-08-24 09:24:59', '2019-08-24 09:24:59'),
-(182, 'default', 'created', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-24 09:29:16', '2019-08-24 09:29:16'),
-(183, 'default', 'created', 50, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-08-24 09:29:16', '2019-08-24 09:29:16'),
-(184, 'default', 'created', 2, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-08-24 09:29:16', '2019-08-24 09:29:16'),
-(185, 'default', 'created', 51, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Deborah\",\"email\":\"kola@gmail.com\"}}', '2019-08-24 09:29:17', '2019-08-24 09:29:17'),
-(186, 'default', 'created', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-08-24 09:29:17', '2019-08-24 09:29:17'),
-(187, 'default', 'created', 52, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-08-24 09:29:17', '2019-08-24 09:29:17'),
-(188, 'default', 'created', 4, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Opeyemi\",\"student_email\":\"opeyemi@gmail.com\",\"matric_number\":\"1236\"}}', '2019-08-24 09:29:18', '2019-08-24 09:29:18'),
-(189, 'default', 'created', 53, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Opeyemi\",\"email\":\"opeyemi@gmail.com\"}}', '2019-08-24 09:29:18', '2019-08-24 09:29:18'),
-(190, 'default', 'created', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-24 09:37:15', '2019-08-24 09:37:15'),
-(191, 'default', 'created', 54, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-08-24 09:37:15', '2019-08-24 09:37:15'),
-(192, 'default', 'deleted', 1, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-24 09:38:14', '2019-08-24 09:38:14'),
-(193, 'default', 'deleted', 54, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-08-24 09:38:15', '2019-08-24 09:38:15'),
-(194, 'default', 'created', 2, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-24 09:38:51', '2019-08-24 09:38:51'),
-(195, 'default', 'created', 55, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kolasope\",\"email\":\"kolasope@gmail.com\"}}', '2019-08-24 09:38:51', '2019-08-24 09:38:51'),
-(196, 'default', 'created', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-08-24 09:38:52', '2019-08-24 09:38:52'),
-(197, 'default', 'created', 56, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Deborah\",\"email\":\"kola@gmail.com\"}}', '2019-08-24 09:38:52', '2019-08-24 09:38:52'),
-(198, 'default', 'created', 4, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-08-24 09:38:53', '2019-08-24 09:38:53'),
-(199, 'default', 'created', 57, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Kemi\",\"email\":\"kemi@gmail.com\"}}', '2019-08-24 09:38:53', '2019-08-24 09:38:53'),
-(200, 'default', 'created', 5, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Opeyemi\",\"student_email\":\"opeyemi@gmail.com\",\"matric_number\":\"1236\"}}', '2019-08-24 09:38:54', '2019-08-24 09:38:54'),
-(201, 'default', 'created', 58, 'App\\User', 1, 'App\\User', '{\"attributes\":{\"name\":\"Opeyemi\",\"email\":\"opeyemi@gmail.com\"}}', '2019-08-24 09:38:54', '2019-08-24 09:38:54'),
-(202, 'default', 'updated', 2, 'App\\Students', 55, 'App\\User', '{\"attributes\":{\"student_name\":\"Kolasope Hammed\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"},\"old\":{\"student_name\":\"Kolasope\",\"student_email\":\"kolasope@gmail.com\",\"matric_number\":\"1203\"}}', '2019-08-24 11:28:55', '2019-08-24 11:28:55'),
-(203, 'default', 'updated', 3, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Deborah Solafola\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"},\"old\":{\"student_name\":\"Deborah\",\"student_email\":\"kola@gmail.com\",\"matric_number\":\"1294\"}}', '2019-08-24 11:32:19', '2019-08-24 11:32:19'),
-(204, 'default', 'updated', 4, 'App\\Students', 1, 'App\\User', '{\"attributes\":{\"student_name\":\"Kemi Afolabi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"},\"old\":{\"student_name\":\"Kemi\",\"student_email\":\"kemi@gmail.com\",\"matric_number\":\"1225\"}}', '2019-08-24 11:32:40', '2019-08-24 11:32:40'),
-(205, 'default', 'created', 2, 'App\\Assignments', 40, 'App\\User', '{\"attributes\":{\"allocation_id\":3,\"question\":\"Read and so the assigment\",\"submission_date\":\"02\\/02\\/2019\",\"user_id\":40}}', '2019-08-24 13:07:26', '2019-08-24 13:07:26'),
-(206, 'default', 'created', 3, 'App\\Assignments', 41, 'App\\User', '{\"attributes\":{\"allocation_id\":5,\"question\":\"Read and explain chpater one of these material\",\"submission_date\":\"08\\/02\\/2019\",\"user_id\":41}}', '2019-08-24 13:09:19', '2019-08-24 13:09:19'),
-(207, 'default', 'created', 4, 'App\\Assignments', 41, 'App\\User', '{\"attributes\":{\"allocation_id\":2,\"question\":\"Rad and summerize chapter one\",\"submission_date\":\"08\\/20\\/2019\",\"user_id\":41}}', '2019-08-24 13:10:39', '2019-08-24 13:10:39'),
-(208, 'default', 'created', 1, 'App\\AssignmentSolutions', 55, 'App\\User', '{\"attributes\":{\"assignment_id\":2,\"student_id\":2,\"solution\":\"This is the assignment solution\"}}', '2019-08-24 16:19:06', '2019-08-24 16:19:06'),
-(209, 'default', 'created', 2, 'App\\AssignmentSolutions', 55, 'App\\User', '{\"attributes\":{\"assignment_id\":2,\"student_id\":2,\"solution\":\"sfknliohau ochjcupk tmhu\"}}', '2019-08-24 16:27:05', '2019-08-24 16:27:05'),
-(210, 'default', 'created', 3, 'App\\AssignmentSolutions', 55, 'App\\User', '{\"attributes\":{\"assignment_id\":2,\"student_id\":2,\"solution\":\"<p>I am submtting the assignment<\\/p><p><br><\\/p>\"}}', '2019-08-31 11:41:49', '2019-08-31 11:41:49'),
-(211, 'default', 'created', 4, 'App\\AssignmentSolutions', 55, 'App\\User', '{\"attributes\":{\"assignment_id\":2,\"student_id\":2,\"solution\":\"<p>I am submtting the assignment<\\/p><p><br><\\/p>\"}}', '2019-08-31 11:42:07', '2019-08-31 11:42:07'),
-(212, 'default', 'updated', 4, 'App\\Assignments', 41, 'App\\User', '{\"attributes\":{\"allocation_id\":2,\"question\":\"Read and summarize chapter one\",\"submission_date\":\"08\\/20\\/2019\",\"user_id\":41},\"old\":{\"allocation_id\":2,\"question\":\"Rad and summerize chapter one\",\"submission_date\":\"08\\/20\\/2019\",\"user_id\":41}}', '2019-09-13 11:09:45', '2019-09-13 11:09:45'),
-(213, 'default', 'created', 1, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:13:54', '2019-09-13 13:13:54'),
-(214, 'default', 'created', 2, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:13:54', '2019-09-13 13:13:54'),
-(215, 'default', 'created', 3, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:19:00', '2019-09-13 13:19:00'),
-(216, 'default', 'created', 4, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:19:00', '2019-09-13 13:19:00'),
-(217, 'default', 'created', 5, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:44:31', '2019-09-13 13:44:31'),
-(218, 'default', 'created', 6, 'App\\AssignmentResults', 41, 'App\\User', '[]', '2019-09-13 13:44:31', '2019-09-13 13:44:31'),
-(219, 'default', 'created', 5, 'App\\Assignments', 40, 'App\\User', '{\"attributes\":{\"allocation_id\":4,\"question\":\"This is testing\",\"submission_date\":\"09\\/10\\/2019\",\"user_id\":40}}', '2019-09-17 11:53:29', '2019-09-17 11:53:29'),
-(220, 'default', 'created', 7, 'App\\AssignmentResults', 40, 'App\\User', '[]', '2019-09-17 11:54:24', '2019-09-17 11:54:24');
-INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_id`, `subject_type`, `causer_id`, `causer_type`, `properties`, `created_at`, `updated_at`) VALUES
-(221, 'default', 'created', 8, 'App\\AssignmentResults', 40, 'App\\User', '[]', '2019-09-17 11:54:25', '2019-09-17 11:54:25'),
-(222, 'default', 'created', 3, 'App\\AssignmentSolutions', 55, 'App\\User', '{\"attributes\":{\"assignment_id\":3,\"student_id\":2,\"solution\":\"Testing\"}}', '2019-09-18 15:42:49', '2019-09-18 15:42:49');
 
 -- --------------------------------------------------------
 
@@ -293,10 +65,10 @@ CREATE TABLE `assignment_results` (
 --
 
 INSERT INTO `assignment_results` (`result_id`, `user_id`, `score`, `assignment_id`, `solution_id`, `student_id`, `updated_at`, `created_at`, `deleted_at`) VALUES
-(5, 41, 8, 2, 2, 3, '2019-09-13 13:44:31', '2019-09-13 13:44:31', NULL),
-(6, 41, 7, 2, 1, 2, '2019-09-13 13:44:31', '2019-09-13 13:44:31', NULL),
-(7, 40, 5, 2, 2, 3, '2019-09-17 11:54:24', '2019-09-17 11:54:24', NULL),
-(8, 40, 8, 2, 1, 2, '2019-09-17 11:54:24', '2019-09-17 11:54:24', NULL);
+(11, 41, 8, 1, 6, 2, '2019-09-20 13:16:22', '2019-09-20 13:16:22', NULL),
+(12, 41, 5, 2, 5, 2, '2019-09-20 13:16:22', '2019-09-20 13:16:22', NULL),
+(13, 41, 5, 1, 7, 3, '2019-09-20 13:19:00', '2019-09-20 13:19:00', NULL),
+(14, 41, 5, 2, 8, 3, '2019-09-20 13:21:18', '2019-09-20 13:21:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -309,6 +81,7 @@ CREATE TABLE `assignment_solutions` (
   `solution` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `assignment_id` bigint(20) UNSIGNED NOT NULL,
   `student_id` bigint(20) UNSIGNED NOT NULL,
+  `status` int(1) NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -319,10 +92,11 @@ CREATE TABLE `assignment_solutions` (
 -- Dumping data for table `assignment_solutions`
 --
 
-INSERT INTO `assignment_solutions` (`solution_id`, `solution`, `assignment_id`, `student_id`, `updated_at`, `created_at`, `deleted_at`, `user_id`) VALUES
-(1, 'This is the assignment solution', 2, 2, '2019-08-24 16:19:06', '2019-08-24 16:19:06', NULL, 40),
-(2, 'sfknliohau ochjcupk tmhu', 2, 3, '2019-08-24 16:27:05', '2019-08-24 16:27:05', NULL, 40),
-(3, 'Testing', 3, 2, '2019-09-18 15:42:49', '2019-09-18 15:42:49', NULL, 41);
+INSERT INTO `assignment_solutions` (`solution_id`, `solution`, `assignment_id`, `student_id`, `status`, `updated_at`, `created_at`, `deleted_at`, `user_id`) VALUES
+(5, 'I ve submitted my hard copy', 2, 2, 1, '2019-09-20 13:11:00', '2019-09-20 13:11:00', NULL, 41),
+(6, 'Computer is widely used', 1, 2, 1, '2019-09-20 13:15:11', '2019-09-20 13:15:11', NULL, 41),
+(7, 'New Assignment', 1, 3, 1, '2019-09-20 13:17:55', '2019-09-20 13:17:55', NULL, 41),
+(8, 'Submitted&nbsp;', 2, 3, 1, '2019-09-20 13:20:22', '2019-09-20 13:20:22', NULL, 41);
 
 -- --------------------------------------------------------
 
@@ -409,11 +183,9 @@ CREATE TABLE `course_assignments` (
 --
 
 INSERT INTO `course_assignments` (`assignment_id`, `allocation_id`, `question`, `marks`, `submission_date`, `user_id`, `level`, `program`, `course_id`, `updated_at`, `created_at`, `deleted_at`) VALUES
-(1, 4, 'Read and summarize&nbsp; chapter one and two', 15, '08/26/2019', 40, 'HND 2', 'Daily Part Time', 4, '2019-08-24 09:20:48', '2019-08-24 09:20:25', NULL),
-(2, 3, 'Read Chapter One and Two and submit before the stipulated date', 10, '02/02/2019', 40, 'OND 1', 'Full Time', 6, '2019-08-24 13:07:25', '2019-08-24 13:07:25', NULL),
-(3, 5, 'Read and explain chpater one of these material', 20, '08/02/2019', 41, 'OND 1', 'Full Time', 5, '2019-08-24 13:09:19', '2019-08-24 13:09:19', NULL),
-(4, 2, 'Read and summarize chapter one', 10, '08/20/2019', 41, 'OND 2', 'Part Time', 2, '2019-09-13 11:09:45', '2019-08-24 13:10:38', NULL),
-(5, 4, 'This is testing', 20, '09/10/2019', 40, 'HND 1', 'Part Time', 4, '2019-09-17 11:53:29', '2019-09-17 11:53:29', NULL);
+(1, 1, 'Read and submit', 15, '09/20/2019', 41, 'OND 1', 'Full Time', 1, '2019-09-20 13:00:53', '2019-09-20 13:00:53', NULL),
+(2, 5, 'Submit the hard copy', 10, '09/23/2019', 41, 'OND 1', 'Full Time', 5, '2019-09-20 13:01:40', '2019-09-20 13:01:40', NULL),
+(3, 2, 'Please read and submit assignment', 15, '09/24/2019', 41, 'OND 2', 'Part Time', 2, '2019-09-20 13:02:21', '2019-09-20 13:02:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -857,19 +629,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
 
 --
 -- AUTO_INCREMENT for table `assignment_results`
 --
 ALTER TABLE `assignment_results`
-  MODIFY `result_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `result_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `assignment_solutions`
 --
 ALTER TABLE `assignment_solutions`
-  MODIFY `solution_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `solution_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `courses`
@@ -887,7 +659,7 @@ ALTER TABLE `course_allocations`
 -- AUTO_INCREMENT for table `course_assignments`
 --
 ALTER TABLE `course_assignments`
-  MODIFY `assignment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `assignment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`

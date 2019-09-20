@@ -18,7 +18,7 @@
                                     <li class="breadcrumb-item"><a href="{{route('administrator.dashboard')}}">Home</a></li>
 
                                     <li class="breadcrumb-item"><a href="{{route('assignment.solution',$solution->assignment_id)}}">Submit Solution</a></li>
-                                    <li class="breadcrumb-item"><a href="{{route('allocation.create')}}">View My Submission</a></li>
+                                    <li class="breadcrumb-item"><a href="{{route('assignment.index')}}">View Assignments</a></li>
                                     {{-- <li class="breadcrumb-item"><a href="{{route('solution.index')}}">View solution</a></li> --}}
 
                                     @if (auth()->user()->hasPermissionTo('Restore Solution') OR

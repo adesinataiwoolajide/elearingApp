@@ -87,10 +87,14 @@
                                                                 </a>
                                                             @endif
                                                             @if (auth()->user()->hasRole('Student'))
+
+
                                                                 <a href="{{route('assignment.solution', $allocations->assignment_id)}}"
                                                                     class="" onclick="">
                                                                     <i class="fa fa-book"></i>
                                                                 </a>
+
+
                                                             @endif
                                                         </td>
 

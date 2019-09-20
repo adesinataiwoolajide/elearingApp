@@ -17,4 +17,11 @@
             "course_id" => $course_id
         ])->get();
     }
+
+    function solutionStatus($assignment_id, $student_id){
+        return \DB::table('assignment_solutions')->where([
+            "assignment_id" => $assignment_id,
+            "student_id" => $student_id
+        ])->first();
+    }
 ?>

@@ -118,6 +118,13 @@ class AssignmentResultController extends Controller
                         "user_id" => $user_id,
 
                     ]);
+
+                    DB::table('assignment_solutions')->where([
+                        'assignment_id' =>$assignment_id,
+                    ])->update([
+
+                        "status" => 1,
+                    ]);
                     if($this->model->create($data)){
 
 
